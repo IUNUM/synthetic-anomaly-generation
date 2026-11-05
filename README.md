@@ -556,13 +556,6 @@ For a fair comparison, models should be evaluated using the same held-out real-w
 
 Train models using different quantities of real data.
 
-For example:
-
-- 50 real training images.
-- 100 real training images.
-- 250 real training images.
-- 500 real training images.
-
 At each dataset size, compare:
 
 1. Real images only.
@@ -579,15 +572,6 @@ If the combined model performs better using the same number of real training ima
 
 Keep the real dataset fixed and vary the quantity of synthetic training images.
 
-For example:
-
-- 500 synthetic images.
-- 1,000 synthetic images.
-- 2,500 synthetic images.
-- 5,000 synthetic images.
-- 10,000 synthetic images.
-
-Investigate whether additional synthetic examples continue to improve performance or whether diminishing returns occur.
 
 ## 8.4 Comparing Synthetic Generation Methods
 
@@ -686,16 +670,6 @@ However, excessive false positives are also undesirable because a robot that rep
 
 Investigate different classification thresholds.
 
-For example:
-
-| Hazard probability | Possible response |
-|---|---|
-| Below 0.3 | No hazard detected |
-| 0.3–0.7 | Uncertain; additional inspection |
-| Above 0.7 | Hazard detected |
-
-These values are illustrative. The actual threshold should be selected using validation data.
-
 ## 9.4 Environmental Generalisation
 
 Test whether models generalise across different environments.
@@ -720,41 +694,11 @@ For example, a model might recognise synthetic anomalies based on sharp composit
 
 ---
 
-# 10. Analysis and Research Contribution
+# 10. Project Timeline
 
-The final research stage should establish what the experiments demonstrate.
+Schedule
 
-Potential outcomes:
-
-| Result | Interpretation |
-|---|---|
-| Synthetic-only performs well | Synthetic anomalies can provide useful supervision without real hazard examples. |
-| Synthetic + real outperforms real-only | Synthetic data provides additional useful training information. |
-| Basic compositing performs poorly | The synthetic-to-real domain gap may be significant. |
-| Context-aware compositing performs better | Appearance realism may contribute to generalisation. |
-| VAE generation performs well | Learned image distributions may provide useful synthetic training examples. |
-| More synthetic data stops improving results | Data diversity and quality may matter more than quantity. |
-| Robot-specific information improves results | Hazard recognition benefits from navigation context. |
-
-## Potential Research Contributions
-
-The project could contribute:
-
-1. An empirical comparison of synthetic anomaly generation methods for robotic hazard detection.
-2. An investigation into whether synthetic data reduces real-world training data requirements.
-3. An evaluation of VAE-based generation against compositing and diffusion-based generation.
-4. An investigation into which augmentation techniques improve synthetic-to-real generalisation.
-5. An evaluation of whether robot-specific spatial information improves hazard recognition.
-
-The primary contribution is the experimental evidence and methodology rather than simply training a new neural network architecture.
-
----
-
-# 11. Suggested Project Timeline
-
-A proposed 10-week schedule:
-
-| Week | Work | Expected outcome |
+| Step | Work | Expected outcome |
 |---|---|---|
 | 1 | Literature review | Understand anomaly detection and synthetic generation |
 | 2 | Dataset collection | Download and inspect datasets |
@@ -769,7 +713,7 @@ A proposed 10-week schedule:
 
 ---
 
-# 12. Recommended Technology Stack
+# 11. Recommended Technology Stack
 
 | Component | Tool |
 |---|---|
@@ -794,9 +738,9 @@ Useful documentation:
 
 ---
 
-# 13. Recommended Initial Implementation
+# 12. Initial Implementation
 
-To keep the project manageable, the initial implementation should focus on:
+To keep the project manageable, the initial implementation will focus on:
 
 **Environment:** Indoor corridors and walkways.
 
@@ -823,11 +767,9 @@ To keep the project manageable, the initial implementation should focus on:
 
 **Primary evaluation:** Recall, precision, F1, PR-AUC and false negative rate on independent real-world images.
 
-This provides a focused experimental framework while leaving room for more advanced techniques.
-
 ---
 
-# 14. Limitations and Safety Considerations
+# 13. Limitations and Safety Considerations
 
 Several limitations must be acknowledged:
 
@@ -842,31 +784,3 @@ Several limitations must be acknowledged:
 Real-world robotic deployment would require additional evaluation of temporal consistency, depth estimation, stopping distance, sensor failures and fail-safe behaviour.
 
 The project investigates visual hazard recognition rather than establishing a complete autonomous safety system.
-
----
-
-# 15. Key Research References
-
-The following papers provide a starting point for the literature review:
-
-1. MVTec AD: A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection (2019).
-2. CutPaste: Self-Supervised Learning for Anomaly Detection and Localization (2021).
-3. DRAEM: A Discriminatively Trained Reconstruction Embedding for Surface Anomaly Detection (2021).
-4. RELLIS-3D Dataset: Data, Benchmarks and Analysis (2020).
-5. TartanGround: A Large-Scale Dataset for Ground Robot Perception and Navigation (2025).
-
-Additional literature should be collected specifically on:
-
-- VAE-based image generation.
-- Latent-space anomaly synthesis.
-- Synthetic-to-real domain generalisation.
-- Image compositing and Poisson blending.
-- Robotic obstacle detection and traversability estimation.
-
----
-
-## Final Research Objective
-
-The ultimate objective is to establish whether synthetic anomaly generation, including VAE-based generation, can provide a scalable alternative or supplement to collecting large quantities of real-world hazardous images.
-
-By comparing generation techniques, training strategies and real-world performance, the project aims to identify how synthetic data can improve the reliability and data efficiency of visual hazard detection in mobile robots.

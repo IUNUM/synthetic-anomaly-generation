@@ -154,31 +154,12 @@ The project requires three types of data:
 
 ## 4.1 Normal Environmental Images
 
-Potential datasets:
-
-| Dataset | Description | Intended use |
-|---|---|---|
-| OpenLORIS-Scene | Real indoor robotic environments | Normal backgrounds |
-| RUGD | Outdoor unstructured ground-driving images | Outdoor backgrounds |
-| TartanAir | Photorealistic simulated environments | Simulation and synthetic environments |
-| TartanGround | Ground-robot perception and navigation data | Robot-centric research |
-
-Initially, OpenLORIS-Scene or RUGD should be prioritised rather than mixing indoor and outdoor environments.
+Indoor datasets[First]: https://github.com/lifelong-robotic-vision/openloris-scene-tools/blob/master/README.md
+Outdoor dataset[Second]: RUGD dataset
 
 ## 4.2 Object Images
 
-Potential datasets:
-
-| Dataset | Useful contents |
-|---|---|
-| COCO | Household objects, bags, chairs and other objects |
-| Open Images | Diverse annotated everyday objects |
-| Objects365 | Large variety of object categories |
-| ADE20K | Scene and object segmentation information |
-
-Segmentation masks are particularly useful because they allow objects to be inserted without copying their original backgrounds.
-
-Ideally, each object should be represented as an RGBA image containing its colour information and segmentation mask.
+Datasets: COCO and Open Images
 
 ## 4.3 Real Hazard Images
 
@@ -202,10 +183,6 @@ Maintain a spreadsheet containing:
 - Number of images.
 - Image resolution.
 - Available annotations.
-- Licence.
-- Intended use.
-
-Dataset licensing should be checked before using or distributing any data.
 
 ---
 

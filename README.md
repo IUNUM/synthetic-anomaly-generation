@@ -1,1 +1,1 @@
-# synthetic-anomaly-generation
+# Synthetic Anomaly Generation

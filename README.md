@@ -188,8 +188,6 @@ Maintain a spreadsheet containing:
 
 # 5. Synthetic Anomaly Generation
 
-This is the central technical component of the project.
-
 Several methods will be investigated and compared.
 
 ## 5.1 Method A: Basic Copy-and-Paste
@@ -581,19 +579,13 @@ This establishes which augmentation techniques contribute meaningfully to genera
 
 ## 8.6 Preventing Data Leakage
 
-Dataset splitting must happen before synthetic generation.
-
-For example, if 100 original background images generate 1,000 synthetic images, all variations derived from a particular background must remain in the same dataset split.
-
-Recommended procedure:
+Procedure:
 
 1. Split original backgrounds into training, validation and testing groups.
 2. Generate training anomalies only from training backgrounds.
 3. Use separate backgrounds for validation.
 4. Keep real-world test images completely independent.
 5. Prefer testing in physically different environments.
-
-This prevents the model from recognising backgrounds that it has already encountered during training.
 
 ---
 
